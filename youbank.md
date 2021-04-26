@@ -10,11 +10,14 @@ tags: smart-contracts, documentation
 # Address 
 // Where can I find this info for the current contract?
 
-`UniswapV2Factory` is deployed at `0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f` on the Ethereum [mainnet](https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f), and the [Ropsten](https://ropsten.etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f), [Rinkeby](https://rinkeby.etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f), [Görli](https://goerli.etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f), and [Kovan](https://kovan.etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f) testnets. It was built from commit [8160750](https://github.com/Uniswap/uniswap-v2-core/tree/816075049f811f1b061bca81d5d040b96f4c07eb).
+`YouBank` is deployed at `0x76626868e214d50AEDDbD2212202864A0feB3AaC` on the Ethereum Kovan, 
+[Binance Smart Chain testnet](https://testnet.bscscan.com/address/0x76626868e214d50AEDDbD2212202864A0feB3AaC#contracts), and Binance Smart Chain Mainnet
+
+It was built from commit [8160750](https://github.com/Uniswap/uniswap-v2-core/tree/816075049f811f1b061bca81d5d040b96f4c07eb).
 
 # Overview
 
-The `YouBank` contract is derived from `TeamRole` and `IRoleModel` contracts.
+The `YouBank` contract is a core contract used to perform the most operations with the finances. The `YouBank` contract is derived from `TeamRole` and `IRoleModel` contracts.
 
 # Events
 
@@ -526,7 +529,6 @@ Grants role to account. Returns A boolean that indicates if the operation was su
 * `role`: Role account.
 * `account`: The address for grant role.
 
-
 ## revokeRoleInvestmentPool
 
 ```solidity
@@ -538,7 +540,6 @@ Revokes role to account. Returns boolean that indicates if the operation was suc
 * `pool`: The address Investment Pool.
 * `role`: Role account.
 * `account`: The address for grant role.
-
 
 ## setAddressCreatorInvestPool
 
@@ -560,7 +561,6 @@ Sets address `assetManageTeam` contract. Returns a boolean that indicates if the
 
 * `addrContract`: The address AssetManageTeam contract.
 
-
 ## setReturnInvestmentLpartner
 
 ```solidity
@@ -571,7 +571,6 @@ Sets address `ReturnInvestmentLpartner` contract. Returns a boolean that indicat
      
 * `addrContract`: The address ReturnInvestmentLpartner contract.
      
-
 ## setOracleContract
 
 ```solidity
@@ -581,8 +580,7 @@ function setOracleContract(IOracle _oracle) public onlyTeam returns (bool);
 Sets address `Oracle` contract. Returns a boolean that indicates if the operation was successful.
 
 * `_oracle`: The address Oracle contract.
-    
-
+  
 ## getPools
 
 ```solidity
@@ -663,7 +661,6 @@ Retrieves Investigation Pool values.
 
 * `pool`: The address Investment Pool.
 
-
 ## setPoolValues
 
 ```solidity
@@ -711,7 +708,7 @@ Creates a request to withdraw any tokens (BUSD/USDT e.t.c) from Investigation Po
 * `token`: The address of token.
 * `maxValue`: Maximum possible deposit.
 
-##approveTokensWithdwawalFromStartup
+## approveTokensWithdwawalFromStartup
 
 ```solidity
 function approveTokensWithdwawalFromStartup(address pool, address token, address team) public returns (bool);
@@ -745,7 +742,7 @@ Withdraws `SuperAdmin` investment pool. Returns a boolean that indicates if the 
 * `token`: The address token contract.
 * `amount`: Amount of tokens.
 
-##getCustomPrice
+## getCustomPrice
 
 ```solidity
 function getCustomPrice(address aggregator) public view returns (uint256);
@@ -763,9 +760,164 @@ Claims ubank tokens from. Returns a boolean that indicates if the operation was 
 
 * `pool`: The address Investment Pool contract.
 
+# Interfaces
 
+## IPool
 
-# Interface
+```solidity
+import "./interface/IPool.sol";
+```
+
+```solidity
+pragma solidity ^0.6.8;
+interface IPool {
+    function hasRole(bytes32 role, address account) external view returns (bool);
+    function getRoleMemberCount(bytes32 role) external view returns (uint256);
+    function getDeposit(address owner, uint256 index) external view returns(uint256 amount, uint256 time, uint256 lock_period, bool refund_authorize, uint256 amountWithdrawal, address investedToken);
+    function getDepositLength(address owner) external view returns(uint256);
+    function getMembersRole(bytes32 role) external view returns (address[] memory Accounts);
+    function getInfoPool() external view returns(string memory name,bool isPublicPool, address token, uint256 locked);
+    function getInfoPoolFees() external view returns(uint256 rate, uint256 depositFixedFee, uint256 referralDepositFee, uint256 annualPercent, uint256 penaltyEarlyWithdraw, uint256 totalInvestLpartner, uint256 premiumFee);
+    function getReferral(address lPartner) external view returns (address);
+    function getPoolValues() external view returns(uint256 poolValueUSD, uint256 poolValue, string memory proofOfValue);
+    function getPoolPairReserves() external view     returns (uint112 reserve0, uint112 reserve1, uint32 blockTimestampLast, address token0, address token1, address weth,uint price0CumulativeLast,uint price1CumulativeLast);
+    function _updatePool(string calldata name,bool isPublicPool, address token, uint256 locked, uint256 depositFixedFee, uint256 referralDepositFee, uint256 annualPercent, uint256 penaltyEarlyWithdraw) external returns (bool);
+    function _setRate(uint256 rate) external returns (bool);
+    function _setTeamReward(uint256 teamReward) external returns (bool);
+    function _setPoolValues(uint256 poolValueUSD,uint256 poolValue, string calldata proofOfValue) external returns (bool);
+    function _depositPoolRegistry(address sender, uint256 amount, uint256 feesMultipier) external returns (bool);
+    function _depositTokenPoolRegistry(address payable sender, uint256 amount) external returns (bool);
+    function _depositInvestmentInTokensToPool(address payable sender, uint256 amount, address token) external returns (bool);
+    function _withdrawTeam(address payable sender, uint256 amount) external returns (bool);
+    function _withdrawTokensToStartup(address payable sender,address token, uint256 amount) external returns (bool);
+    function _returnsInTokensFromTeam(address payable sender,address token, uint256 amount) external returns (bool);
+    function _activateDepositToPool() external returns (bool);
+    function _disactivateDepositToPool() external returns (bool);
+    function _setReferral(address sender, address lPartner, address referral) external returns (bool);
+    function _approveWithdrawLpartner(address lPartner, uint256 index, uint256 amount, address investedToken) external returns (bool);
+    function _withdrawLPartner(address payable sender) external returns (bool, uint256, address);
+    function _withdrawSuperAdmin(address payable sender,address token, uint256 amount) external returns (bool);
+    function grantRole(bytes32 role, address account) external;
+    function revokeRole(bytes32 role, address account) external;
+}
+```
+
+## IAssetsManageTeam
+
+```solidity
+import "./interface/IAssetsManageTeam.sol";
+```
+
+```solidity
+pragma solidity ^0.6.8;
+interface IAssetsManageTeam {
+    function _depositToken(address pool, address team, address token, uint256 amount) external returns (bool);
+    function _withdraw(address pool, address team, uint256 amount) external returns (bool);
+    function _withdrawTokensToStartup(address pool,address token, address team, uint256 amount) external returns (bool);
+    function _request(bool withdraw, address pool, address team, uint256 maxValue) external returns(bool);
+    function _requestTokensWidthdrawalFromStartup(address pool, address token, address team, uint256 maxValue) external returns(bool);
+    function _approve(address pool, address team, address owner) external returns(bool);
+    function _approveTokensWidthdrawalFromStartup(address pool, address token, address team, address owner) external returns(bool);
+    function _disapprove(address pool, address team, address owner) external returns(bool);
+    function _lock(address pool, address team, address owner) external returns(bool);
+    function _unlock(address pool, address team, address owner) external returns(bool);
+    function addManager(address account) external;
+    function getPerformedOperationsLength(address pool, address owner) external view returns(uint256 length);
+    function getPerformedOperations(address pool, address owner, uint256 index) external view returns(address token, uint256 amountToken, uint256 withdraw, uint256 time);
+    function getRequests(address pool) external view returns(address[] memory);
+    function getApproval(address pool) external view returns(address[] memory);
+    function getRequestTeamAddress(address pool, address team) external view returns(bool lock, uint256 maxValueToken, uint256 madeValueToken, uint256 maxValue, uint256 madeValue);
+    function getApproveTeamAddress(address pool, address team) external view returns(bool lock, uint256 maxValueToken, uint256 madeValueToken, uint256 maxValue, uint256 madeValueE);
+}
+```
+
+## IReturnInvestmentLpartner
+
+```solidity
+import "./interface/IReturnInvestmentLpartner.sol";
+```
+
+```solidity
+pragma solidity ^0.6.8;
+interface IReturnInvestmentLpartner {
+  function _request(address pool, address lPartner, uint256 index, uint256 amount, address token) external returns(bool);
+  function _approve(address pool, address lPartner, address sender) external returns(bool);
+  function _disapprove(address pool, address lPartner, address sender) external returns(bool);
+  function getRequests(address pool) external view returns(address[] memory);
+  function getRequestsLpartner(address pool, address lPartner) external view returns(uint256[] memory);
+}
+```
+
+## ICreator
+
+```solidity
+import "./interface/ICreator.sol";
+```
+
+```solidity
+pragma solidity ^0.6.8;
+interface ICreator {
+    function createPool(string calldata name, uint256 lockPeriod,uint256 depositFixedFee,uint256 referralDepositFee,uint256 annualPercent,uint256 penaltyEarlyWithdraw,address superAdmin,address gPartner,address lPartner,address startupTeam) external returns (address);
+}
+```
+
+## IRoleModel
+
+```solidity
+import "./interface/IRoleModel.sol";
+```
+
+```solidity
+pragma solidity ^0.6.8;
+contract IRoleModel {
+    bytes32 public constant SUPER_ADMIN_ROLE = keccak256("SUPER_ADMIN_ROLE");
+    bytes32 public constant GENERAL_PARTNER_ROLE = keccak256("GENERAL_PARTNER_ROLE");
+    bytes32 public constant LIMITED_PARTNER_ROLE = keccak256("LIMITED_PARTNER_ROLE");
+    bytes32 public constant STARTUP_TEAM_ROLE = keccak256("STARTUP_TEAM_ROLE");
+    bytes32 public constant POOL_REGISTRY = keccak256("POOL_REGISTRY");
+    bytes32 public constant RETURN_INVESTMENT_LPARTNER = keccak256("RETURN_INVESTMENT_LPARTNER");
+    bytes32 public constant ORACLE = keccak256("ORACLE");
+    bytes32 public constant REFERER_ROLE = keccak256("REFERER_ROLE");
+}
+```
+
+## IOracle
+
+```solidity
+import "./interface/IOracle.sol";
+```
+
+```solidity
+pragma solidity ^0.6.8;
+interface IOracle {
+    function getLatestPrice() external view returns ( uint256,uint8);
+    function getCustomPrice(address aggregator) external view returns (uint256,uint8);
+}
+```
+
+## IERC20
+
+```solidity
+import "./interface/IERC20.sol";
+```
+
+```solidity
+pragma solidity ^0.6.8;
+interface IERC20 {
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    function decimals() external view returns (uint8);
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+```
 
 # ABI
 
+```solidity
+import YouBank from @ 
+```

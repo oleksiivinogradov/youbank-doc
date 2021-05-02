@@ -191,6 +191,7 @@ To mint your NFT, do the following:
 2. Click on the **Connect to Web3** link.
 ![](./media-assets/connect-to-web3.png)
 3. Select your wallet. 
+
 ![](./media-assets/connect-wallet.png)
 4. Click **Next** and **Connect**.
 <img src="./media-assets/connect-account.png" width="220">
@@ -219,7 +220,7 @@ For example:
 
 ![](./media-assets/mint-function.png)
 
-You have to confirem transaction:
+You have to confirm transaction:
 
 <img src="./media-assets/confirm-transaction.png" width="220">
 

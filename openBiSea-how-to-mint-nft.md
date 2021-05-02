@@ -193,6 +193,7 @@ To mint your NFT, do the following:
 3. Select your wallet. 
 
 ![](./media-assets/connect-wallet.png)
+
 4. Click **Next** and **Connect**.
 <img src="./media-assets/connect-account.png" width="220">
 Now, your wallet is connected:

@@ -2,7 +2,7 @@
 
 This article shows how to mint NFT from scratch using the [Open Bi Sea](https://openbisea.io/) platform and [MetaMask](https://metamask.io/). These platforms allow creators to easily and without permission create their own [NFTs](https://en.wikipedia.org/wiki/Non-fungible_token). 
 
-To mint your first NFT, you need to [create an Ethereum wallet](#creating-and-configuring-a-wallet) and [buy the first BNB](#buy-your-first-bnb), [updload and prepare your unique digital asset](#), and, finally, [connect your wallet](#).
+To mint your first NFT, you need to [create an Ethereum wallet](#creating-and-configuring-a-wallet) and [buy the first BNB](#buy-your-first-bnb), [updload and prepare your unique digital asset](#post-ipfs-asset--json), and, finally, [connect your wallet](#connect-your-wallet) and [write a mint contract](#mint-nft).
 
 ## Creating and configuring a wallet
 
@@ -109,13 +109,13 @@ Using Pinata, we can leverage content addressability to prove the authenticity o
 
 To upload your asset (e.g., your image), log into the Pinata account. 
 
-<img src="./media-assets/pinata-login.png" width="160">
+<img src="./media-assets/pinata-login.png" width="220">
 
 Simply go to the Pin Manager, click the upload button, choose file, and upload your file. 
 
-<img src="./media-assets/upload-png.png" width="160">
+<img src="./media-assets/upload-png.png" width="220">
 
-When the upload is complete, you'll see your file in the grid and can copy the IPFS CID (the string of characters that starts with "Qm"). You'll need this CID later, so keep it handy. You can also come back to the Pin Manage page and copy it again any time.
+When the upload is complete, you'll see your file in the grid and can copy the **IPFS CID** (the string of characters that starts with "Qm"). You'll need this CID later, so keep it handy. You can also come back to the Pin Manage page and copy it again any time.
 
 ![](./media-assets/uploaded-image.png)
 
@@ -169,7 +169,7 @@ Save your file and give it a useful name like `asset_metadata.json`. You can cal
 
 Now, you can upload this JSON to Pinata. When you do, you will once again get a CID. This time, the CID is for your metadata JSON which is a pointer to the file you uploaded before.
 
-<img src="./media-assets/upload-json.png" width="160">
+<img src="./media-assets/upload-json.png" width="220">
 
 Once the JSON file is uploaded, you'll see the following:
 
@@ -190,10 +190,51 @@ To mint your NFT, do the following:
 1. Open the [https://bscscan.com/address/0xb861DF245fc18483235D9C11b87d8A76F4678e08#writeContract](https://bscscan.com/address/0xb861DF245fc18483235D9C11b87d8A76F4678e08#writeContract) link.
 2. Click on the **Connect to Web3** link.
 ![](./media-assets/connect-to-web3.png)
-3. Select your wallet.
+3. Select your wallet. 
 ![](./media-assets/connect-wallet.png)
-4. Click **Connect**.
-
+4. Click **Next** and **Connect**.
+<img src="./media-assets/connect-account.png" width="220">
 Now, your wallet is connected:
 
 ![](./media-assets/connected-wallet.png)
+
+## Mint NFT
+
+To mint your NFT, you need to write the `mint` contract. For this, fill in the following fields:
+
+![](./media-assets/mint-contract.png)
+
+Where:
+
+* **to (address)** - is the address of your wallet
+* **tokenURI (String)** - is the `ipfs` address of youe media asset JSON.
+
+*How to link to content on IPFS:*
+
+`https://ipfs.io/ipfs/<CID>`
+
+For example:
+
+`https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu`
+
+![](./media-assets/mint-function.png)
+
+You have to confirem transaction:
+
+<img src="./media-assets/confirm-transaction.png" width="220">
+
+You will see the confirmation popup window:
+
+![](./media-assets/confirm-popup.png)
+
+You always can see the transaction details:
+
+![](./media-assets/transaction-details.png)
+
+If you open your Metamask wallet, you'll see your mint NFT in the **Activity** tab:
+
+![](./media-assets/activity-tab.png)
+
+Click the Mint to see details:
+
+<img src="./media-assets/mint-details.png" width="220">

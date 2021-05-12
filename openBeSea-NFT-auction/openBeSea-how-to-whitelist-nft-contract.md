@@ -2,7 +2,7 @@
 
 Once you mint an NFT, you probably want to list it for auction. To do this, you need to whitelist the NFT contract first.
 
-> Important: Your NFT contract is whitelisted by default, if you minted NFT using the [0xb861DF245fc18483235D9C11b87d8A76F4678e08](https://bscscan.com/address/0xb861DF245fc18483235D9C11b87d8A76F4678e08#writeContract).
+> Important: Your NFT contract is whitelisted by default, if you minted NFT using the [0xb861DF245fc18483235D9C11b87d8A76F4678e08](https://bscscan.com/address/0xb861DF245fc18483235D9C11b87d8A76F4678e08#writeContract) contract.
 
 Read more on [how to mint your NFT using Open Be Sea](./../openBiSea-how-to-mint-nft.md).
 
@@ -11,21 +11,23 @@ Read more on [how to mint your NFT using Open Be Sea](./../openBiSea-how-to-mint
 You need to check whether your contract has already been whitelisted or not. There are two contracts where you can do this:
 
 1. [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#readContract)
-
++
 Use the **contractsNFTWhitelisted** (#12) function:
-
++
 ![contracts-nft-whitelisted](./../media-assets/contracts-nft-whitelisted.png)
-
-This function shows an array of all the whitelisted NFT contracts. If your contract address is in this list, you can skip the whitelisting step and switch to [putting up an NFT token to auction](./openBeSea-NFT-how-to-create-auction.md). If you cannot find your contract in the list, please read below on [how to whitelist the NFT contract](#whitelist-the-nft-contract).
-
++
+This function shows an array of all the whitelisted NFT contracts. If NFT contract address is in this list, you can skip the whitelisting step and switch to [putting up an NFT token to auction](./openBeSea-NFT-how-to-create-auction.md). 
++
+If you cannot find NFT contract address in the list, please read below on [how to whitelist the NFT contract](#whitelist-the-nft-contract).
++
 2. [0x1c2b69833967500042d476B1149D4074B59c1A17](https://bscscan.com/address/0x1c2b69833967500042d476B1149D4074B59c1A17#readContract)
-
++
 Use the **isContractNFTWhitelisted** function (#7). Put the NFT contract address you want to check in the **_contractNFT (address)** field.
-
++
 ![is-whitelisted](./../media-assets/is-whitelisted.png)
-
++
 The results should be like shown below:
-
++
 ![is-whitelisted-example](./../media-assets/is-whitelisted-example.png)
 
 ## Whitelist the NFT contract

@@ -1,4 +1,4 @@
-## How to whitelist your NFT contract
+## How to whitelist an NFT contract
 
 Once you mint an NFT, you probably want to list it for auction. To do this, you need to whitelist the NFT contract first.
 
@@ -48,8 +48,7 @@ To pay using OBS tokens, you need to allow the contract to withdraw money from y
 ![approve](./../media-assets/approve.png)
 
 * **spender (address)**: specify the following address `0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825`.
-* **amount (uint256)**: set `10` as a current default value.
->To get the final amount, use `10 * 10 ^ 18`
+* **amount (uint256)**: set `10` as a current default value. To get the final amount, use `10 * 10 ^ 18`.
 * Click **Write**. 
 
 Then open the [whitelistContractCreatorTokens](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#writeContract) function *(#32)* in `0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825` contract.

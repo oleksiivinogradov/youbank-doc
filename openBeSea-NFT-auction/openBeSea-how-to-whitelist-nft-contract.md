@@ -11,32 +11,34 @@ Read more on [how to mint your NFT using Open Be Sea](./../openBiSea-how-to-mint
 You need to check whether your contract has already been whitelisted or not. There are two contracts where you can do this:
 
 1. [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#readContract)
-+
-Use the **contractsNFTWhitelisted** (#12) function:
-+
+
+Use the **contractsNFTWhitelisted** *(#12)* function:
+
 ![contracts-nft-whitelisted](./../media-assets/contracts-nft-whitelisted.png)
-+
+
 This function shows an array of all the whitelisted NFT contracts. If NFT contract address is in this list, you can skip the whitelisting step and switch to [putting up an NFT token to auction](./openBeSea-NFT-how-to-create-auction.md). 
-+
+
 If you cannot find NFT contract address in the list, please read below on [how to whitelist the NFT contract](#whitelist-the-nft-contract).
-+
+
 2. [0x1c2b69833967500042d476B1149D4074B59c1A17](https://bscscan.com/address/0x1c2b69833967500042d476B1149D4074B59c1A17#readContract)
-+
-Use the **isContractNFTWhitelisted** function (#7). Put the NFT contract address you want to check in the **_contractNFT (address)** field.
-+
+
+Use the **isContractNFTWhitelisted** function *(#7)*. Put the NFT contract address you want to check in the **_contractNFT (address)** field.
+
 ![is-whitelisted](./../media-assets/is-whitelisted.png)
-+
+
 The results should be like shown below:
-+
+
 ![is-whitelisted-example](./../media-assets/is-whitelisted-example.png)
 
 ## Whitelist the NFT contract
 
-To whitelist the contract, you can use two functions of [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#writeContract): 
+To whitelist the contract, you can use two functions of [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#writeContract) contract: 
 
-1. [whitelistContractCreator](#whitelistcontractcreator-function) (#31) - To whitelist NFT token in BNB.
+1. [whitelistContractCreator](#whitelistcontractcreator-function) *(#31)* - to whitelist NFT token in BNB.
+
 OR
-2. [whitelistContractCreatorTokens](#whitelistContractcreatortokens-function) (#32) - To whitelist NFT token in OBS tokens.
+
+2. [whitelistContractCreatorTokens](#whitelistContractcreatortokens-function) *(#32)* - to whitelist NFT token in OBS tokens.
 
 ### whitelistContractCreator function
 
@@ -50,7 +52,7 @@ OR
 
 Choose this function to use OBS tokens to whitelist the NFT contract.
 
-To pay using OBS tokens, you need to allow the contract to withdraw money from your wallet. For this, open [0x490DbA6180b089d8E36eBb1E56a33F1aE9B96b87](https://bscscan.com/address/0x490DbA6180b089d8E36eBb1E56a33F1aE9B96b87#writeContract) and use the **approve** (#3) function.
+To pay using OBS tokens, you need to allow the contract to withdraw money from your wallet. For this, open [0x490DbA6180b089d8E36eBb1E56a33F1aE9B96b87](https://bscscan.com/address/0x490DbA6180b089d8E36eBb1E56a33F1aE9B96b87#writeContract) contract and use the **approve** *(#3)* function.
 
 ![approve](./../media-assets/approve.png)
 
@@ -59,7 +61,7 @@ To pay using OBS tokens, you need to allow the contract to withdraw money from y
 >To get the final amount, use `10 * 10 ^ 18`
 * Click **Write**. 
 
-Then open the [whitelistContractCreatorTokens](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#writeContract) function (#32) in `0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825` contract.
+Then open the [whitelistContractCreatorTokens](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#writeContract) function *(#32)* in `0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825` contract.
 
 ![whitelist-contract-creator-tokens](./../media-assets/whitelist-contract-creator-tokens.png)
 
@@ -70,6 +72,6 @@ Then open the [whitelistContractCreatorTokens](https://bscscan.com/address/0x1Bf
 
 ---- 
 
-Once your contract is whitelisted, the contract address will appear in the array provided by the **contractsNFTWhitelisted** (#12) function of [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#readContract). 
+Once your contract is whitelisted, the contract address will appear in the array provided by the **contractsNFTWhitelisted** *(#12)* function of [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#readContract) contract. 
 
 Now you can [put up the NFT token to auction](./openBeSea-NFT-how-to-create-auction.md).

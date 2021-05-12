@@ -1,9 +1,9 @@
 # How to bid on an auction 
 
-The [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#writeContract) offers to you two options to bid on an auction:
+The [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#writeContract) contract offers you two options to bid on an auction:
 
-* [bid](#bid) (#19) function is used to bid in BNB.
-* [bidUSD](#bidusd) (#20) function is used to bid in BUSD tokens.
+* [bid](#bid) *(#19)* function is used to bid in BNB.
+* [bidUSD](#bidusd) *(#20)* function is used to bid in BUSD tokens.
 
 ## bid
 
@@ -18,7 +18,7 @@ The [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1
 ## bidUSD
 
 To be able to bid in BUSD token, you need to allow the contract to withdraw an amount from your wallet.
-For this, open the [0xe9e7cea3dedca5984780bafc599bd69add087d56](https://bscscan.com/address/0xe9e7cea3dedca5984780bafc599bd69add087d56#writeContract) and use the **approve** function:
+For this, open the [0xe9e7cea3dedca5984780bafc599bd69add087d56](https://bscscan.com/address/0xe9e7cea3dedca5984780bafc599bd69add087d56#writeContract) contract and use the **approve** function:
 
 ![approve-busd](./../media-assets/approve-busd.png)
 
@@ -43,7 +43,7 @@ If the auction is canceled, the amount of your bid returns to your wallet.
 
 ## How can I get the NFT auction List?
 
-To find out all active NFT auction list, use the **getNFTsAuctionList** function (#4) of the [0x1c2b69833967500042d476B1149D4074B59c1A17](https://bscscan.com/address/0x1c2b69833967500042d476B1149D4074B59c1A17#readContract):
+To find out all active NFT auction list, use the **getNFTsAuctionList** function (#4) of the [0x1c2b69833967500042d476B1149D4074B59c1A17](https://bscscan.com/address/0x1c2b69833967500042d476B1149D4074B59c1A17#readContract) contract:
 
 ![get-auction-list](./../media-assets/get-auction-list.png)
 
@@ -55,7 +55,7 @@ Once you put the NFT contract address and click the **Query** button, you should
 
 ## How can I get the auction details?
 
-To get the auction details, use the **getAuction** function (#3) of the [0x1c2b69833967500042d476B1149D4074B59c1A17](https://bscscan.com/address/0x1c2b69833967500042d476B1149D4074B59c1A17#readContract):
+To get the auction details, use the **getAuction** function (#3) of the [0x1c2b69833967500042d476B1149D4074B59c1A17](https://bscscan.com/address/0x1c2b69833967500042d476B1149D4074B59c1A17#readContract) contract:
 
 ![get-auction](./../media-assets/get-auction.png)
 

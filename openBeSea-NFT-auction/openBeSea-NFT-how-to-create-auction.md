@@ -10,7 +10,7 @@ In this guide, we’ll show you how to list your NFT for auction, how to set an 
 
 1. To put up an NFT token to auction, you need to whitelist the NFT. Read more on [how to whitelist your NFT](./openBeSea-how-to-whitelist-nft-contract.md).
 
-2. When an auction is created, your NFT is held on the contract that conducts the auction. To allow the transfer of the NFT token to another contract, you need to **approve** this action using the [0xb861DF245fc18483235D9C11b87d8A76F4678e08](https://bscscan.com/address/0xb861DF245fc18483235D9C11b87d8A76F4678e08#writeContract)
+2. When an auction is created, your NFT is held on the contract that conducts the auction. To allow the transfer of the NFT token to another contract, you need to **approve** this action using the [0xb861DF245fc18483235D9C11b87d8A76F4678e08](https://bscscan.com/address/0xb861DF245fc18483235D9C11b87d8A76F4678e08#writeContract) contract.
 
 ![approve-contract](./../media-assets/approve-contract.png)
 
@@ -21,7 +21,7 @@ In this guide, we’ll show you how to list your NFT for auction, how to set an 
 
 ## Create auction
 
-Use **createAuction** function (#23) of the [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#writeContract).
+Use **createAuction** function *(#23)* of the [0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825](https://bscscan.com/address/0x1Bf12f0650d8065fFCE3Cd9111feDEC21deF6825#writeContract) contract.
 
 ![create-auction](./../media-assets/create-auction.png)
 
@@ -34,12 +34,10 @@ Use **createAuction** function (#23) of the [0x1Bf12f0650d8065fFCE3Cd9111feDEC21
 
 Using the **_deadline (uint256)** field, you can set the type of your auction:
 
-* **Create an auction for a specific period**
-
+* **Create an auction for a specific period**  
 You can set a sufficiently long term for the auction (for example, a month). To do this, enter the time in the **_deadline** field (for example, in a month from the current moment). All bids will be accepted during this time, and once the time expires, the highest bid wins. The NFT is automatically sold to the collector with the highest bidder. 
 
-* **Sell ​​an NFT without bids**
-
+* **Sell ​​an NFT without bids**  
 To sell an NFT to the first collector who offers a price higher than the initial price, specify the current time in the **_deadline** field. 
 
 Once you click **Write**, the auction is started.

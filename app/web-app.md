@@ -3,12 +3,15 @@
 Open Bi Sea Web App is designed to facilitate your auction activity. 
 
 * [Add your wallet](#)
+
 ** [Connect wallet](#)
 ** [Restore wallet](#)
 ** [Create wallet](#)
+
 * [Mint NFT](#)
 * [Create an auction](#)
 * [Manage auction](#)
+
 ** [Start](#)
 ** [Stop](#)
 ** [Cancel](#)

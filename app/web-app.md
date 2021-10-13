@@ -2,9 +2,20 @@
 
 Open Bi Sea Web App is designed to facilitate your auction activity. 
 
+* [Add your wallet](#)
+** [Connect wallet](#)
+** [Restore wallet](#)
+** [Create wallet](#)
+* [Mint NFT](#)
+* [Create an auction](#)
+* [Manage auction](#)
+** [Start](#)
+** [Stop](#)
+** [Cancel](#)
+
 To open the Open Bi Sea Web App, go to the [openbisea.io](https://openbisea.io/) and click **Explore marketplace:**
 
-![web-app](./../media-assets/web-app/marketplace)
+![web-app](./../media-assets/web-app/marketplace.png)
 
 You can easily explore and participate in all active auctions sorted by the following parameters:
 
@@ -12,11 +23,11 @@ You can easily explore and participate in all active auctions sorted by the foll
 * your own auctions
 * featured auctions.
 
-NOTE: To start your work on the Open Bi Sea marketplace, you need first [connect your wallet](#connect-your-wallet). 
+NOTE: To start your work on the Open Bi Sea marketplace, you need first [connect your wallet](#add-your-wallet). 
 
-## Connect your wallet
+## Add your wallet
 
-To connect your wallet, go to the [Open Bi Sea Web App](https://app.openbisea.com/marketplace) > **Profile**. Then, click **Change or add your wallet**.
+To add your wallet, go to the [Open Bi Sea Web App](https://app.openbisea.com/marketplace) > **Profile**. Then, click **Change or add your wallet**.
 
 Here you have three options to add your wallet:
 

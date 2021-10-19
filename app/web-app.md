@@ -8,7 +8,7 @@ To open the Open Bi Sea Web App, go to the [openbisea.io](https://openbisea.io/)
 
 Mobile version: 
 
-![](/../media-assets/web-app/mobile/marketplace.jpeg)
+![](./../media-assets/web-app/mobile/marketplace.png)
 
 NOTE: To work on the Open Bi Sea marketplace, you need first to [connect your wallet](#use-your-wallet).
 
@@ -28,7 +28,7 @@ You have three options to add your wallet:
 
 Mobile version: 
 
-![](/../media-assets/web-app/mobile/wallet-menu.JPEG)
+![](./../media-assets/web-app/mobile/wallet-menu.png)
 
 ### Connect wallet
 
@@ -44,7 +44,7 @@ Once you provide wallet credentials, your wallet opens and connects to the Binan
 
 Mobile version: 
 
-![](/../media-assets/web-app/mobile/add-wallet.JPEG)
+![](./../media-assets/web-app/mobile/add-wallet.png)
 
 ### Restore wallet
 
@@ -84,7 +84,7 @@ Open **My Collectibles** and click on the plus sign on the top-left.
 
 Mobile version: 
 
-![](/../media-assets/web-app/mobile/mint-nft.JPEG)
+![](./../media-assets/web-app/mobile/mint-nft.png)
 
 Upload a media file (image or animation), fill in an NFT name, description, specify NFT artist, and add the artist's public profile, if it exists. 
 
@@ -104,7 +104,7 @@ Now, your NFT is created, whitelisted, and can be sold.
 
 Mobile version: 
 
-![](/../media-assets/web-app/mobile/nft-ready-to-go.JPEG)
+![](./../media-assets/web-app/mobile/nft-ready-to-go.png)
 
 
 ### Start selling
@@ -113,7 +113,7 @@ All NFTs created on the platform or added using the settings menu are available 
 
 Select an NFT you want to sell and click **Start selling**.
 
-![nft-ready-to-go](/../media-assets/web-app/nft-ready-to-go.png)
+![nft-ready-to-go](./../media-assets/web-app/nft-ready-to-go.png)
 
 Here, you have to perform the following steps to start the auction:
 
@@ -127,9 +127,9 @@ Here, you have to perform the following steps to start the auction:
 
 Mobile version: 
 
-![](/../media-assets/web-app/mobile/create-auction.JPEG)
+![](./../media-assets/web-app/mobile/create-auction.png)
 
-![](/../media-assets/web-app/mobile/auctions.JPEG)
+![](./../media-assets/web-app/mobile/auctions.png)
 
 ### Manage auction
 
@@ -137,12 +137,12 @@ Once your auction is created, you can see it in the **Marketplace** tab > **My O
 
 Click on the auction you want to manage. The opened form allows you to **cancel** auction and **share** the auction details with others.
 
-![](/../media-assets/web-app/manage-auction.JPEG)
+![](./../media-assets/web-app/manage-auction.png)
 
 * Click **Cancel auction** to remove it from the active auction list. Once your auction is canceled, it becomes available in the **My Collectibles** tab.
 * Click **Tell a friend** or use the **Share** icon to share details of your auction with friends via social networks. 
 
-![](/../media-assets/web-app/mobile/manage-auction.JPEG)
+![](./../media-assets/web-app/mobile/manage-auction.png)
 
 ### Buy NFT or make a bid
 
@@ -153,7 +153,7 @@ To buy NFT, go to the **Marketplace** tab, select the NFT you're interested in, 
 
 If you already have NFT, you can easily add it to the Open Bi Sea Marketplace. For this, open **My Collectibles**, click on the settings sign on the top-right and select the **Add NFT Contract** option:
 
-![add-nft-contract](/../media-assets/web-app/add-nft-contract.png)
+![add-nft-contract](./../media-assets/web-app/add-nft-contract.png)
 
 1. Specify the contractNFT (address): the NFT contract address (e.g., `0x3ce4e8edd002e653aa07b0b239bf5aa3bafde775`).
 2. Select where you want to add the NFT contract. Click on the **Add to ETH list now** or **Add to BSC list now**.
@@ -162,15 +162,15 @@ To start selling your NFT, you need to [whitelist the NFT contract](#whitelist-c
 
 Mobile version: 
 
-![](/../media-assets/web-app/mobile/add-menu.JPEG)
+![](./../media-assets/web-app/mobile/add-menu.png)
 
-![](/../media-assets/web-app/mobile/add-nft.JPEG)
+![](./../media-assets/web-app/mobile/add-nft.png)
 
 ### Whitelist Contract
 
 To whitelist the newly added NFT contract, open **My Collectibles**, click on the settings sign on the top-right and select the **Whitelist Contract** option:
 
-![whitelist-nft](/../media-assets/web-app/whitelist-nft.png)
+![whitelist-nft](./../media-assets/web-app/whitelist-nft.png)
 
 Specify the NFT address contract and click **Allow contract** button.
 
@@ -178,7 +178,7 @@ Now you can start selling your contract on the Open Bi Sea Marketplace.
 
 Mobile version: 
 
-![](/../media-assets/web-app/mobile/whitelist.JPEG)
+![](./../media-assets/web-app/mobile/whitelist.png)
 
 ### Invite Friends
 
@@ -188,9 +188,9 @@ To share your NFT contract details with others, use **Invite Friends!** option. 
 
 You can run some tests in BSC or ETH testnet before start selling on the Open Bi Sea Marketplace. For this, select the testnet from the menu:
 
-![testnet](/../media-assets/web-app/testnet.png)
+![testnet](./../media-assets/web-app/testnet.png)
 
 Mobile version: 
 
-![](/../media-assets/web-app/mobile/testnet.JPEG)
+![](./../media-assets/web-app/mobile/testnet.png)
 

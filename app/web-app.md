@@ -192,5 +192,5 @@ You can run some tests in BSC or ETH testnet before start selling on the Open Bi
 
 Mobile version: 
 
-![](./../media-assets/web-app/mobile/testnet.png)
+![](./../media-assets/web-app/mobile/testnet.png | width=200)
 

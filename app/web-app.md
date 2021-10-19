@@ -12,19 +12,6 @@ Mobile version:
 
 NOTE: To work on the Open Bi Sea marketplace, you need first to [connect your wallet](#use-your-wallet).
 
-* [Add your wallet](#)
-* [Create NFT](#)
-* [Start NFT selling or create auction](#)
-* [Manage auction](#)
-* [Buy NFT](#)
-* [Add NFT to the p](#)
-
-
-** [Start](#)
-** [Stop](#)
-** [Cancel](#)
-
-
 ## Use your wallet
 
 To add your wallet, use the **Connect wallet** button on the main window of the Marketplace.
@@ -80,7 +67,14 @@ In the Marketplace, you can easily explore and participate in all active auction
 * your own auctions
 * featured auctions.
 
-To start your auction, you need to create your NFT first. If you already have your NFT's created on other platforms, you can [add them to the Open Bi Sea marketplace](#add-existing-nft-to-the-platform). 
+To start your auction, you need to [create your NFT](#create-nft) first. If you already have your NFT's created on other platforms, you can [add them to the Open Bi Sea marketplace](#add-existing-nft-to-the-platform). 
+
+
+* [Create NFT](#create-nft)
+* [Start NFT selling or create auction](#start-selling)
+* [Manage auction](#manage-auction)
+* [Buy NFT](#buy-nft-or-make-a-bid)
+* [Add existing NFT](#add-existing-nft-to-the-platform)
 
 ### Create NFT
 
@@ -113,7 +107,7 @@ Mobile version:
 ![](/../media-assets/web-app/mobile/nft-ready-to-go.JPEG)
 
 
-### Start Selling or create an auction
+### Start selling
 
 All NFTs created on the platform or added using the settings menu are available on the Open Bi Sea Marketplace **My Collectibles** tab.
 
